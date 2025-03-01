@@ -1,0 +1,3 @@
+[build]
+  command = "npm run build"
+  publish = "public"  # 根据实际的发布目录进行调整
