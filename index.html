@@ -1,36 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pi Payment</title>
-    <script src="https://sdk.minepi.com/pi-sdk.js"></script>
-</head>
-<body>
-    <h1>Pi 支付測試</h1>
-    <button onclick="startPiPayment()">使用 Pi 支付</button>
+<script>
+  // 初始化 Pi SDK
+  Pi.init({ version: "2.0", sandbox: true });
 
-    <script>
-        const { Pi } = window;
-        Pi.init({
-            version: "2.0",
-            sandbox: true
-        });
+  // 定义需要的权限范围
+  const scopes = ['payments'];
 
-        async function startPiPayment() {
-            try {
-                const payment = await Pi.createPayment({
-                    amount: 1,
-                    memo: "Test Payment",
-                    metadata: { productId: "12345" },
-                    targetUsername: "YourPiUsername",
-                });
+  // 处理未完成的支付
+  function onIncompletePaymentFound(payment) {
+    console.log('发现未完成的支付：', payment);
+    // 显示模态框提示用户
+    const paymentModal = document.getElementById('paymentModal');
+    paymentModal.style.display = 'block';
 
-                console.log("支付成功: ", payment);
-            } catch (error) {
-                console.error("支付失敗: ", error);
-            }
-        }
-    </script>
-</body>
-</html>
+    // 继续支付
+    document.getElementById('continuePaymentButton').addEventListener('click', function() {
+      paymentModal.style.display = 'none';
+      Pi.resumeIncompletePayment(payment).then(function(payment) {
+        console.log('支付已完成：', payment);
+        // 在此处执行支付完成后的操作，例如更新订单状态
+      }).catch(function(error) {
+        console.error('继续支付时出错：', error);
+        // 在此处处理继续支付时的错误，例如提示用户重试
+      });
+    });
+
+    // 取消支付
+    document.getElementById('cancelPaymentButton').addEventListener('click', function() {
+      paymentModal.style.display = 'none';
+      Pi.cancelPayment(payment.identifier).then(function(payment) {
+        console.log('支付已取消：', payment);
+        // 在此处执行支付取消后的操作，例如更新订单状态
+      }).catch(function(error) {
+        console.error('取消支付时出错：', error);
+        // 在此处处理取消支付时的错误，例如提示用户重试
+      });
+    });
+  }
+
+  // 认证用户
+  Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
+    console.log('用户验证成功：', auth);
+    // 在此处执行用户验证成功后的操作
+  }).catch(function(error) {
+    console.error('用户验证失败：', error);
+    // 在此处处理验证失败的情况，例如提示用户重新尝试
+  });
+
+  // 支付处理函数
+  function handlePayment() {
+    const paymentData = {
+      amount: 1, // 支付金额
+      memo: '购买商品', // 支付备注
+      metadata: { orderId: '1234' } // 元数据，可根据需要修改
+    };
+
+    Pi.createPayment(paymentData).then(function(payment) {
+      console.log('支付成功：', payment);
+      // 在此处执行支付成功后的操作，例如更新订单状态
+    }).catch(function(error) {
+      console.error('支付失败：', error);
+      // 在此处处理支付失败的情况，例如提示用户重新尝试
+    });
+  }
+
+  // 为支付按钮添加点击事件监听器
+  document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('payButton').addEventListener('click', handlePayment);
+  });
+</script>
