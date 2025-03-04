@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - JumpJump</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; }
+        h1, h2 { color: #333; }
+        .language-switch { margin-bottom: 20px; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <div class="language-switch">
+        <button onclick="switchLanguage('en')">English</button>
+        <button onclick="switchLanguage('zh')">中文</button>
+        <button onclick="switchLanguage('id')">Bahasa Indonesia</button>
+        <button onclick="switchLanguage('vi')">Tiếng Việt</button>
+    </div>
+
+    <div id="en" class="language">
+        <h1>Privacy Policy</h1>
+        <p>Effective Date: [Insert Date]</p>
+        <h2>1. Introduction</h2>
+        <p>Welcome to JumpJump, developed by GamePrimitive. This Privacy Policy explains how we handle user data.</p>
+        <h2>2. Data Collection</h2>
+        <p>We do not actively collect user data. The game only uses Pi Network login credentials.</p>
+        <h2>3. Purpose of Data Usage</h2>
+        <p>Data is primarily used to store game-related information, including player name, virtual currency, items, and scores.</p>
+        <h2>4. Data Storage & Security</h2>
+        <p>Player data is stored in a cloud database. While we do not have detailed encryption specifications, we take reasonable security measures.</p>
+        <h2>5. Account Deactivation</h2>
+        <p>Users can deactivate their accounts, but game data cannot be manually deleted.</p>
+        <h2>6. Cookies</h2>
+        <p>We do not directly use cookies, but Pi Network authentication may involve cookies.</p>
+        <h2>7. Age Restriction</h2>
+        <p>JumpJump is suitable for users aged 13 and above. However, Pi Network payments may have additional age restrictions.</p>
+        <h2>8. Third-Party Services</h2>
+        <p>We use Pi Network SDK as a third-party service.</p>
+        <h2>9. Contact</h2>
+        <p>For inquiries, contact us via Facebook: <a href="https://www.facebook.com/profile.php?id=100063880394323">Click Here</a></p>
+    </div>
+
+    <div id="zh" class="language hidden">
+        <h1>隐私政策</h1>
+        <p>生效日期：[插入日期]</p>
+        <h2>1. 介绍</h2>
+        <p>欢迎使用 JumpJump，由 GamePrimitive 开发。本隐私政策解释了我们如何处理用户数据。</p>
+        <h2>2. 数据收集</h2>
+        <p>我们不会主动收集用户数据。游戏仅使用 Pi Network 进行登录。</p>
+        <h2>3. 数据用途</h2>
+        <p>数据主要用于存储游戏相关信息，包括玩家名称、虚拟货币、道具和分数。</p>
+        <h2>4. 数据存储与安全</h2>
+        <p>玩家数据存储在云数据库中。尽管我们没有详细的加密说明，但我们会采取合理的安全措施。</p>
+        <h2>5. 账户停用</h2>
+        <p>用户可以停用其账户，但无法手动删除游戏数据。</p>
+        <h2>6. Cookies</h2>
+        <p>我们不直接使用 Cookies，但 Pi Network 认证可能涉及 Cookies。</p>
+        <h2>7. 年龄限制</h2>
+        <p>JumpJump 适用于 13 岁及以上用户，但 Pi Network 支付可能有额外年龄限制。</p>
+        <h2>8. 第三方服务</h2>
+        <p>我们使用 Pi Network SDK 作为第三方服务。</p>
+        <h2>9. 联系方式</h2>
+        <p>如有疑问，请通过 Facebook 联系我们：<a href="https://www.facebook.com/profile.php?id=100063880394323">点击这里</a></p>
+    </div>
+
+    <script>
+        function switchLanguage(lang) {
+            document.querySelectorAll('.language').forEach(el => el.classList.add('hidden'));
+            document.getElementById(lang).classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
