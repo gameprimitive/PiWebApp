@@ -1,75 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - JumpJump</title>
+    <title>隱私權政策 - JumpJump</title>
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; }
-        h1, h2 { color: #333; }
-        .language-switch { margin-bottom: 20px; }
+        body { font-family: Arial, sans-serif; margin: 20px; }
         .hidden { display: none; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
     </style>
 </head>
 <body>
-    <div class="language-switch">
-        <button onclick="switchLanguage('en')">English</button>
-        <button onclick="switchLanguage('zh')">中文</button>
-        <button onclick="switchLanguage('id')">Bahasa Indonesia</button>
-        <button onclick="switchLanguage('vi')">Tiếng Việt</button>
+    <h2 id="title">隱私權政策</h2>
+    <label for="language">選擇語言：</label>
+    <select id="language">
+        <option value="zh">中文</option>
+        <option value="en">English</option>
+        <option value="th">ภาษาไทย</option>
+        <option value="id">Bahasa Indonesia</option>
+        <option value="vi">Tiếng Việt</option>
+        <option value="ms">Bahasa Melayu</option>
+    </select>
+    
+    <div id="content">
+        <div class="lang" id="zh">
+            <h3>1. 應用程式名稱與開發者</h3>
+            <p>應用程式名稱：JumpJump<br>開發者：GamePrimitive</p>
+            <h3>2. 我們收集的數據</h3>
+            <table>
+                <tr><th>數據類型</th><th>用途</th></tr>
+                <tr><td>玩家名稱</td><td>辨識玩家身份</td></tr>
+                <tr><td>金錢、道具、分數</td><td>儲存遊戲進度</td></tr>
+            </table>
+            <h3>3. 數據存儲與安全</h3>
+            <p>您的數據儲存於雲端資料庫，主要包括玩家基本資訊。我們會盡可能保護您的數據安全。</p>
+            <h3>4. 用戶數據管理</h3>
+            <p>用戶無法手動刪除數據，但可以透過停用帳號來請求刪除。</p>
+            <h3>5. 兒童隱私</h3>
+            <p>我們允許 13 歲以上的玩家使用本應用程式，但支付功能僅限 18 歲以上的用戶。</p>
+            <h3>6. 聯絡我們</h3>
+            <p>如果您有任何問題，請透過 <a href="https://www.facebook.com/profile.php?id=100063880394323">Facebook</a> 與我們聯繫。</p>
+        </div>
+        
+        <div class="lang hidden" id="en">
+            <h3>1. App Name & Developer</h3>
+            <p>App Name: JumpJump<br>Developer: GamePrimitive</p>
+            <h3>2. Data We Collect</h3>
+            <table>
+                <tr><th>Data Type</th><th>Purpose</th></tr>
+                <tr><td>Player Name</td><td>Identify player</td></tr>
+                <tr><td>Money, Items, Score</td><td>Store game progress</td></tr>
+            </table>
+            <h3>3. Data Storage & Security</h3>
+            <p>Your data is stored in a cloud database, including basic player information. We strive to protect your data security.</p>
+            <h3>4. User Data Management</h3>
+            <p>Users cannot manually delete data, but they can request deletion by deactivating their account.</p>
+            <h3>5. Children's Privacy</h3>
+            <p>Our app allows players aged 13 and above, but payment features are only available for users aged 18 and above.</p>
+            <h3>6. Contact Us</h3>
+            <p>If you have any questions, please contact us via <a href="https://www.facebook.com/profile.php?id=100063880394323">Facebook</a>.</p>
+        </div>
+        
+        <!-- 其他語言內容 (泰語、印尼語、越南語、馬來語) 可以按此格式填充 -->
     </div>
-
-    <div id="en" class="language">
-        <h1>Privacy Policy</h1>
-        <p>Effective Date: [Insert Date]</p>
-        <h2>1. Introduction</h2>
-        <p>Welcome to JumpJump, developed by GamePrimitive. This Privacy Policy explains how we handle user data.</p>
-        <h2>2. Data Collection</h2>
-        <p>We do not actively collect user data. The game only uses Pi Network login credentials.</p>
-        <h2>3. Purpose of Data Usage</h2>
-        <p>Data is primarily used to store game-related information, including player name, virtual currency, items, and scores.</p>
-        <h2>4. Data Storage & Security</h2>
-        <p>Player data is stored in a cloud database. While we do not have detailed encryption specifications, we take reasonable security measures.</p>
-        <h2>5. Account Deactivation</h2>
-        <p>Users can deactivate their accounts, but game data cannot be manually deleted.</p>
-        <h2>6. Cookies</h2>
-        <p>We do not directly use cookies, but Pi Network authentication may involve cookies.</p>
-        <h2>7. Age Restriction</h2>
-        <p>JumpJump is suitable for users aged 13 and above. However, Pi Network payments may have additional age restrictions.</p>
-        <h2>8. Third-Party Services</h2>
-        <p>We use Pi Network SDK as a third-party service.</p>
-        <h2>9. Contact</h2>
-        <p>For inquiries, contact us via Facebook: <a href="https://www.facebook.com/profile.php?id=100063880394323">Click Here</a></p>
-    </div>
-
-    <div id="zh" class="language hidden">
-        <h1>隐私政策</h1>
-        <p>生效日期：[插入日期]</p>
-        <h2>1. 介绍</h2>
-        <p>欢迎使用 JumpJump，由 GamePrimitive 开发。本隐私政策解释了我们如何处理用户数据。</p>
-        <h2>2. 数据收集</h2>
-        <p>我们不会主动收集用户数据。游戏仅使用 Pi Network 进行登录。</p>
-        <h2>3. 数据用途</h2>
-        <p>数据主要用于存储游戏相关信息，包括玩家名称、虚拟货币、道具和分数。</p>
-        <h2>4. 数据存储与安全</h2>
-        <p>玩家数据存储在云数据库中。尽管我们没有详细的加密说明，但我们会采取合理的安全措施。</p>
-        <h2>5. 账户停用</h2>
-        <p>用户可以停用其账户，但无法手动删除游戏数据。</p>
-        <h2>6. Cookies</h2>
-        <p>我们不直接使用 Cookies，但 Pi Network 认证可能涉及 Cookies。</p>
-        <h2>7. 年龄限制</h2>
-        <p>JumpJump 适用于 13 岁及以上用户，但 Pi Network 支付可能有额外年龄限制。</p>
-        <h2>8. 第三方服务</h2>
-        <p>我们使用 Pi Network SDK 作为第三方服务。</p>
-        <h2>9. 联系方式</h2>
-        <p>如有疑问，请通过 Facebook 联系我们：<a href="https://www.facebook.com/profile.php?id=100063880394323">点击这里</a></p>
-    </div>
-
+    
     <script>
-        function switchLanguage(lang) {
-            document.querySelectorAll('.language').forEach(el => el.classList.add('hidden'));
-            document.getElementById(lang).classList.remove('hidden');
-        }
+        document.getElementById('language').addEventListener('change', function() {
+            let selectedLang = this.value;
+            document.querySelectorAll('.lang').forEach(lang => lang.classList.add('hidden'));
+            document.getElementById(selectedLang).classList.remove('hidden');
+        });
     </script>
 </body>
 </html>
